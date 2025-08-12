@@ -3,32 +3,51 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>WADECAVE — Indie Puzzles & RPG Experiments</title>
   <meta name="description" content="WADECAVE: small, tricky puzzle mazes and RPG Maker experiments.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐉</text></svg>">
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- keep your main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- favicon: your logo (this line overrides the emoji one if it exists) -->
+  <link rel="icon" href="assets/logo.png">
+
+  <!-- one-file overrides so you don't have to edit style.css -->
+  <style>
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+    .brand img{height:28px;width:auto;display:block}
+    .hero-logo{height:96px;margin-bottom:12px;opacity:.95;display:block;margin-left:auto;margin-right:auto}
+    /* graceful fallback if logo missing */
+    .brand img[onerror]{display:none}
+  </style>
 </head>
-<body><header class="site-header">
-  <div class="container">
-    <!-- OLD:
-    <a class="brand" href="#home">WADECAVE</a>
-    -->
-    <a class="brand" href="#home">
-      <img src="assets/logo.png" alt="WADECAVE logo">
-      <span>WADECAVE</span>
-    </a>
-    <nav class="nav">
-      <a href="#games">Games</a>
-      <a href="#about">About</a>
-      <a class="btn" href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <!-- logo + wordmark -->
+      <a class="brand" href="#home" aria-label="Wadecave Home">
+        <img src="assets/logo.png" alt="Wadecave logo"
+             onerror="this.style.display='none'">
+        <span>WADECAVE</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#games">Games</a>
+        <a href="#about">About</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main id="home">
     <!-- Hero -->
     <section class="hero">
       <div class="container hero-inner">
+        <!-- hero logo display -->
+        <img src="assets/logo.png" alt="" class="hero-logo" aria-hidden="true"
+             onerror="this.style.display='none'">
+
         <h1>Indie puzzles & RPG Maker experiments</h1>
         <p>Handcrafted labyrinths with keys, gates, and clever dead-ends. Built for fun—shared for free.</p>
         <div class="actions">
@@ -43,7 +62,7 @@
       <div class="container cards">
         <article class="card">
           <h3>⚙️ RPG Maker MV</h3>
-          <p>48‑px tiles, parallax tricks, and small custom plugins.</p>
+          <p>48-px tiles, parallax tricks, and small custom plugins.</p>
         </article>
         <article class="card">
           <h3>🧩 Labyrinths</h3>
@@ -64,12 +83,13 @@
           <article class="game">
             <h3>Maze Trial</h3>
             <p>Collect keys, open three gates, and reach the exit.</p>
-            <a class="btn small" href="#">Download</a>
+            <!-- replace with your real zip when ready -->
+            <a class="btn small" href="#contact">Download</a>
           </article>
           <article class="game">
             <h3>Garden Labyrinth</h3>
-            <p>50×50 maze tuned for 48‑px tiles. Lots of dead‑ends.</p>
-            <a class="btn small" href="#">Download</a>
+            <p>50×50 maze tuned for 48-px tiles. Lots of dead-ends.</p>
+            <a class="btn small" href="#contact">Download</a>
           </article>
           <article class="game">
             <h3>Coming Soon</h3>
@@ -103,6 +123,9 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // keep your year auto-update
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
