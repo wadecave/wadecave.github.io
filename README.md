@@ -1,6 +1,7 @@
-# Wadecave — pure HTML/CSS starter
 
-This is a no‑framework static site you can host for free.
+
+This is a no‑framework static site you can host for free.<img width="816" height="624" alt="WADECAVE_DragonSplash_360w_left30" src="https://github.com/user-attachments/assets/72f56684-e4d2-4736-89c7-92863251820c" />
+
 
 ## Files
 - `index.html` — the page
