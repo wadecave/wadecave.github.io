@@ -3,32 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>WADECAVE — Indie Puzzles & RPG Experiments</title>
-  <meta name="description" content="WADECAVE: small, tricky puzzle mazes and RPG Maker experiments.">
+  <meta name="description" content="Handcrafted labyrinths with keys, gates, and clever dead-ends. Built for fun—shared for free.">
 
-  <!-- keep your main stylesheet -->
+  <!-- keep main stylesheet if you already have it -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- favicon: your logo (this line overrides the emoji one if it exists) -->
-  <link rel="icon" href="assets/logo.png">
+  <!-- use your uploaded attachment as favicon so you don't have to manage files -->
+  <link rel="icon" href="https://github.com/user-attachments/assets/c25b7fd7-ac26-446b-8db8-e1ed1ad82634">
 
-  <!-- one-file overrides so you don't have to edit style.css -->
+  <!-- small inline overrides so you don't need to edit CSS files -->
   <style>
     .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
     .brand img{height:28px;width:auto;display:block}
     .hero-logo{height:96px;margin-bottom:12px;opacity:.95;display:block;margin-left:auto;margin-right:auto}
-    /* graceful fallback if logo missing */
-    .brand img[onerror]{display:none}
+    /* if the external logo ever fails to load, hide the broken icon */
+    img[onerror]{display:none}
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <!-- logo + wordmark -->
+      <!-- logo + wordmark (uses your attachment URL) -->
       <a class="brand" href="#home" aria-label="Wadecave Home">
-        <img src="assets/logo.png" alt="Wadecave logo"
-             onerror="this.style.display='none'">
+        <img src="https://github.com/user-attachments/assets/c25b7fd7-ac26-446b-8db8-e1ed1ad82634"
+             alt="WADECAVE logo" onerror="this.style.display='none'">
         <span>WADECAVE</span>
       </a>
 
@@ -44,9 +43,9 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container hero-inner">
-        <!-- hero logo display -->
-        <img src="assets/logo.png" alt="" class="hero-logo" aria-hidden="true"
-             onerror="this.style.display='none'">
+        <!-- hero logo, same URL -->
+        <img src="https://github.com/user-attachments/assets/c25b7fd7-ac26-446b-8db8-e1ed1ad82634"
+             alt="" class="hero-logo" aria-hidden="true" onerror="this.style.display='none'">
 
         <h1>Indie puzzles & RPG Maker experiments</h1>
         <p>Handcrafted labyrinths with keys, gates, and clever dead-ends. Built for fun—shared for free.</p>
@@ -83,7 +82,7 @@
           <article class="game">
             <h3>Maze Trial</h3>
             <p>Collect keys, open three gates, and reach the exit.</p>
-            <!-- replace with your real zip when ready -->
+            <!-- change this to a real file later (e.g., downloads/maze-trial-win.zip) -->
             <a class="btn small" href="#contact">Download</a>
           </article>
           <article class="game">
