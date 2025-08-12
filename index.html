@@ -3,35 +3,53 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WADECAVE — Indie Puzzles & RPG Experiments</title>
+  <title>WADECAVE — Indie Puzzles & RPG Maker Experiments</title>
   <meta name="description" content="Handcrafted labyrinths with keys, gates, and clever dead-ends. Built for fun—shared for free.">
+  <link rel="icon" href="assets/WADECAVE_DragonSplash_360w_left30.png">
 
-  <!-- keep main stylesheet if you already have it -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- use your uploaded attachment as favicon so you don't have to manage files -->
-  <link rel="icon" href="https://github.com/user-attachments/assets/c25b7fd7-ac26-446b-8db8-e1ed1ad82634">
-
-  <!-- small inline overrides so you don't need to edit CSS files -->
   <style>
+    :root{
+      --bg:#0b0f14;--bg2:#0e131a;--card:#141a22;--text:#e9f1ff;--muted:#a7b5c7;--accent:#56a9ff;--accent2:#7ed0ff;
+      --radius:14px;--container:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    .container{max-width:var(--container);margin:0 auto;padding:24px}
+    a{color:var(--text);text-decoration:none}
+    .btn{border:1px solid #2a3544;padding:.6rem 1rem;border-radius:999px}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:#02111f}
+    .btn:hover{filter:brightness(1.08)}
+    header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,#0b0f1499,#0b0f1400)}
+    .site-header .row{display:flex;align-items:center;gap:16px;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
     .brand img{height:28px;width:auto;display:block}
-    .hero-logo{height:96px;margin-bottom:12px;opacity:.95;display:block;margin-left:auto;margin-right:auto}
-    /* if the external logo ever fails to load, hide the broken icon */
-    img[onerror]{display:none}
+    nav a{padding:.4rem .8rem;color:#c9d6e8}
+    nav a.btn{color:#02111f}
+    .hero{background:radial-gradient(1200px 500px at 50% -20%,#12304c,#0b0f14 60%)}
+    .hero .inner{padding:64px 24px 32px;text-align:center}
+    .hero-logo{height:96px;margin-bottom:12px;opacity:.95}
+    h1{font-size:clamp(28px,5vw,44px);margin:.4rem 0 1rem}
+    p.lead{color:var(--muted);max-width:720px;margin:0 auto 1.2rem}
+    .actions{display:flex;gap:12px;justify-content:center}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+    .card{background:var(--card);border:1px solid #223040;border-radius:var(--radius);padding:18px}
+    .section{padding:36px 0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .game{background:var(--card);border:1px solid #223040;border-radius:var(--radius);padding:18px}
+    .alt{background:var(--bg2)}
+    footer{border-top:1px solid #1f2a38}
+    small{color:#7f92a9}
+    @media (max-width:900px){.cards,.grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <!-- logo + wordmark (uses your attachment URL) -->
+    <div class="container row">
       <a class="brand" href="#home" aria-label="Wadecave Home">
-        <img src="https://github.com/user-attachments/assets/c25b7fd7-ac26-446b-8db8-e1ed1ad82634"
-             alt="WADECAVE logo" onerror="this.style.display='none'">
+        <img src="assets/WADECAVE_DragonSplash_360w_left30.png" alt="WADECAVE logo">
         <span>WADECAVE</span>
       </a>
-
-      <nav class="nav">
+      <nav>
         <a href="#games">Games</a>
         <a href="#about">About</a>
         <a class="btn" href="#contact">Contact</a>
@@ -40,41 +58,23 @@
   </header>
 
   <main id="home">
-    <!-- Hero -->
     <section class="hero">
-      <div class="container hero-inner">
-        <!-- hero logo, same URL -->
-        <img src="https://github.com/user-attachments/assets/c25b7fd7-ac26-446b-8db8-e1ed1ad82634"
-             alt="" class="hero-logo" aria-hidden="true" onerror="this.style.display='none'">
-
+      <div class="container inner">
+        <img src="assets/WADECAVE_DragonSplash_360w_left30.png" alt="" class="hero-logo" aria-hidden="true">
         <h1>Indie puzzles & RPG Maker experiments</h1>
-        <p>Handcrafted labyrinths with keys, gates, and clever dead-ends. Built for fun—shared for free.</p>
+        <p class="lead">Handcrafted labyrinths with keys, gates, and clever dead-ends. Built for fun—shared for free.</p>
         <div class="actions">
           <a class="btn primary" href="#games">Play Demos</a>
           <a class="btn" href="#contact">Get in Touch</a>
         </div>
+        <div class="cards">
+          <div class="card"><h3>⚙️ RPG Maker MV</h3><p>48-px tiles, parallax tricks, and custom plugins.</p></div>
+          <div class="card"><h3>🧩 Labyrinths</h3><p>Keys, gates, and routes that make you think.</p></div>
+          <div class="card"><h3>🕹 Free Builds</h3><p>Download and try demos as they drop.</p></div>
+        </div>
       </div>
     </section>
 
-    <!-- Features -->
-    <section class="features">
-      <div class="container cards">
-        <article class="card">
-          <h3>⚙️ RPG Maker MV</h3>
-          <p>48-px tiles, parallax tricks, and small custom plugins.</p>
-        </article>
-        <article class="card">
-          <h3>🧩 Labyrinths</h3>
-          <p>Keys, gates, and routes that make you think.</p>
-        </article>
-        <article class="card">
-          <h3>🕹 Free Builds</h3>
-          <p>Download and try demos as they drop.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Games -->
     <section id="games" class="section">
       <div class="container">
         <h2>Games</h2>
@@ -82,24 +82,22 @@
           <article class="game">
             <h3>Maze Trial</h3>
             <p>Collect keys, open three gates, and reach the exit.</p>
-            <!-- change this to a real file later (e.g., downloads/maze-trial-win.zip) -->
-            <a class="btn small" href="#contact">Download</a>
+            <a class="btn" href="#contact">Download</a>
           </article>
           <article class="game">
             <h3>Garden Labyrinth</h3>
             <p>50×50 maze tuned for 48-px tiles. Lots of dead-ends.</p>
-            <a class="btn small" href="#contact">Download</a>
+            <a class="btn" href="#contact">Download</a>
           </article>
           <article class="game">
             <h3>Coming Soon</h3>
             <p>New keys & gates plugin testbed.</p>
-            <a class="btn small outline" href="#contact">Get Notified</a>
+            <a class="btn" href="#contact">Get Notified</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- About -->
     <section id="about" class="section alt">
       <div class="container">
         <h2>About</h2>
@@ -107,24 +105,18 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact" class="section">
       <div class="container">
         <h2>Contact</h2>
-        <p>Got feedback or want a build? Email: <a href="mailto:you@example.com">you@example.com</a></p>
+        <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> WADECAVE — Made with pure HTML/CSS.</small>
-    </div>
+  <footer class="section">
+    <div class="container"><small>© <span id="year"></span> WADECAVE</small></div>
   </footer>
 
-  <script>
-    // keep your year auto-update
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
