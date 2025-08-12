@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WADECAVE — RPG Maker MV Maze Challenges</title>
-  <meta name="description" content="Hand-built labyrinths—find keys, unlock gates, and outsmart every dead end. Free builds, no filler.">
+  <meta name="description" content="Hand-built labyrinths—find keys, unlock gates, and outsmart every dead end. Free builds + optional paid supporter editions.">
   <link rel="icon" href="assets/WADECAVE_DragonSplash_360w_left30.png">
 
   <style>
@@ -21,10 +21,14 @@
     header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,#0b0f1499,#0b0f1400)}
     .site-header .row{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center}
-    .brand-logo{height:36px;width:auto;display:block} /* adjust 36px if you want bigger/smaller */
+    .brand-logo{height:36px;width:auto;display:block}
     nav a{padding:.4rem .8rem;color:#c9d6e8}
-    .btn{border:1px solid #2a3544;padding:.6rem 1rem;border-radius:999px}
+
+    /* BUTTONS */
+    .btn{border:1px solid #2a3544;padding:.6rem 1rem;border-radius:999px;display:inline-block}
     .btn.primary{background:var(--accent);border-color:var(--accent);color:#02111f}
+    .btn.alt{background:transparent;border-color:#6aaeff;color:#6aaeff}
+    .btn.small{padding:.45rem .8rem;font-size:.95rem}
     .btn:hover{filter:brightness(1.08)}
 
     /* HERO */
@@ -33,13 +37,15 @@
     h1{font-size:clamp(28px,5vw,44px);margin:.4rem 0 1rem}
     p.lead{color:var(--muted);max-width:720px;margin:0 auto 1.2rem}
     .actions{display:flex;gap:12px;justify-content:center}
+    .tag{display:inline-flex;align-items:center;gap:8px;background:#0f1520;border:1px solid #223040;color:#aecdff;border-radius:999px;padding:.3rem .7rem;font-size:.85rem}
 
     /* CARDS / SECTIONS */
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
     .card{background:var(--card);border:1px solid #223040;border-radius:var(--radius);padding:18px}
     .section{padding:36px 0}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .game{background:var(--card);border:1px solid #223040;border-radius:var(--radius);padding:18px}
+    .game{background:var(--card);border:1px solid #223040;border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px}
+    .game .btnrow{display:flex;gap:10px;flex-wrap:wrap}
     .alt{background:var(--bg2)}
     footer{border-top:1px solid #1f2a38}
     small{color:#7f92a9}
@@ -66,15 +72,15 @@
     <section class="hero">
       <div class="container inner">
         <h1>RPG Maker MV Maze Challenges</h1>
-        <p class="lead">Hand-built labyrinths—find keys, unlock gates, and outsmart every dead end. Free builds, no filler.</p>
+        <p class="lead">Hand-built labyrinths—find keys, unlock gates, and outsmart every dead end.</p>
         <div class="actions">
-          <a class="btn primary" href="#games">Play Demos</a>
-          <a class="btn" href="#contact">Get in Touch</a>
+          <span class="tag">Paid & Free • Pay-what-you-want supporter editions</span>
         </div>
+
         <div class="cards">
           <div class="card"><h3>⚙️ RPG Maker MV</h3><p>48-px tiles, parallax tricks, and custom plugins.</p></div>
           <div class="card"><h3>🧩 Labyrinths</h3><p>Keys, gates, and routes that make you think.</p></div>
-          <div class="card"><h3>🕹 Free Builds</h3><p>Download and try demos as they drop.</p></div>
+          <div class="card"><h3>🕹 Free Builds</h3><p>Play free builds; upgrade to support the project.</p></div>
         </div>
       </div>
     </section>
@@ -87,18 +93,28 @@
           <article class="game">
             <h3>Maze Trial</h3>
             <p>Collect keys, open three gates, and reach the exit.</p>
-            <!-- replace # with your zip when ready (e.g., downloads/maze-trial-win.zip) -->
-            <a class="btn" href="#contact">Download</a>
+            <div class="btnrow">
+              <a class="btn small primary" href="#" download>Free Download</a>
+              <a class="btn small alt" href="#" target="_blank" rel="noopener">Supporter Edition</a>
+            </div>
           </article>
+
           <article class="game">
             <h3>Garden Labyrinth</h3>
             <p>50×50 maze tuned for 48-px tiles. Lots of dead-ends.</p>
-            <a class="btn" href="#contact">Download</a>
+            <div class="btnrow">
+              <a class="btn small primary" href="#" download>Free Download</a>
+              <a class="btn small alt" href="#" target="_blank" rel="noopener">Supporter Edition</a>
+            </div>
           </article>
+
           <article class="game">
-            <h3>Coming Soon</h3>
-            <p>New keys & gates plugin testbed.</p>
-            <a class="btn" href="#contact">Get Notified</a>
+            <h3>Keys & Gates Testbed</h3>
+            <p>Plugin showcase build.</p>
+            <div class="btnrow">
+              <a class="btn small primary" href="#" download>Free Download</a>
+              <a class="btn small alt" href="#" target="_blank" rel="noopener">Supporter Edition</a>
+            </div>
           </article>
         </div>
       </div>
@@ -108,7 +124,7 @@
     <section id="about" class="section alt">
       <div class="container">
         <h2>About</h2>
-        <p>I build small, tricky puzzle mazes and RPG Maker experiments. This site posts playable demos and updates.</p>
+        <p>I build small, tricky puzzle mazes and RPG Maker experiments. Free builds for everyone, plus optional pay-what-you-want editions if you want to support development.</p>
       </div>
     </section>
 
@@ -125,8 +141,6 @@
     <div class="container"><small>© <span id="year"></span> WADECAVE</small></div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
